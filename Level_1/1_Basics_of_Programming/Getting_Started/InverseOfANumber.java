@@ -12,5 +12,6 @@ public class InverseOfANumber {
             count++;
         }
         System.out.println(temp);
+        input.close();
     }
 }
