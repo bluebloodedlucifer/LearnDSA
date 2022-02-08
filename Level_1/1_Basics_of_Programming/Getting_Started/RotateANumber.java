@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.sound.sampled.SourceDataLine;
-
 public class RotateANumber {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
