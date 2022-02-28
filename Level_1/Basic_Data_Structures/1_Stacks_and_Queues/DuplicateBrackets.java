@@ -32,3 +32,9 @@ public class DuplicateBrackets {
         input.close();
     }
 }
+
+# converting the'cut','color','clarity' column from object / string type to float.
+
+mydata['cut'] = mydata['cut'].astype('float64')
+mydata['color'] = mydata['color'].astype('float64')
+mydata['clarity'] = mydata['clarity'].astype('float64')
