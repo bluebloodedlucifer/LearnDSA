@@ -1,3 +1,4 @@
 # LearnDSA
-for practicing DSA questions in C++ and JAVA
-It contains solutions of Level 1 from NADOS from pepcoding
+for practicing DSA questions in different Languages
+Right now working on JavaScript DSA
+It contains solutions of Striver A2Z sheet
