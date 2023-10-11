@@ -1,6 +1,6 @@
-import SinglyLinkedListNode from "./3_singly_linked_list_node.js";
+import DoublyLinkedListNode from "./7_doubly_linked_list_node.js";
 
-export default class SinglyLinkedList{
+export default class DoublyLinkedList{
     constructor(){
         this.head = null;
         this.tail = null;
@@ -8,23 +8,33 @@ export default class SinglyLinkedList{
     }
 
     insertAt(pos, data){
-        if(data !== undefined && pos >=0 && pos <= this.length){
-            let newNode = new SinglyLinkedListNode(data);
+        if(data !== undefined && pos >= 0 && pos <= this.length){
+            let newNode = new DoublyLinkedListNode(data);
             let current = this.head;
 
             if(pos === 0){
                 newNode.next = current;
+                newNode.prev = null;
+                if(current) current.prev = newNode;
                 this.head = newNode;
                 if(this.length === 0) this.tail = newNode;
-            }else{
+            }else if(pos === this.length){
+                this.tail.next = newNode;
+                newNode.prev = this.tail;
+                this.tail = newNode;
+            }
+            else{
                 let index = 0, previous = current;
                 while(index++ < pos){
                     previous = current;
                     current = current.next;
                 }
                 newNode.next = current;
+                newNode.prev = previous;
+
                 previous.next = newNode;
-                if(pos === this.length) this.tail = newNode;
+                current.prev = newNode;
+
             }
             this.length++;
             return true;
@@ -36,26 +46,43 @@ export default class SinglyLinkedList{
             let current = this.head, previous = this.head, index = 0;
             if(pos === 0){
                 this.head = current.next;
+            
                 if(this.length === 1) this.tail = null;
-            }else{
+                else this.head.prev = null;
+
+            }
+            else if(pos === this.length - 1){
+                current = this.tail;
+                this.tail = current.prev;
+                this.tail.next = null;
+            }
+            else{
                 while(index++ < pos){
                     previous = current;
                     current = current.next;
                 }
                 previous.next = current.next;
-                if(pos === this.length - 1) this.tail = previous;
             }
             this.length--;
             return current.data;
         }else return null;
-        
+    }
+    printList(){
+        let current = this.head;
+        let str = "null<=>";
+        while(current){
+            str += `${current.data}<=>`;
+            current = current.next;
+        }
+        str += "null";
+        console.log(str);
     }
 
     push(data){
         return this.insertAt(this.length, data);
     }
     pop(){
-        return this.removeAt(this.length - 1);
+        return this.removeAt(this.length-1);
     }
     unshift(data){
         return this.insertAt(0, data);
@@ -64,18 +91,6 @@ export default class SinglyLinkedList{
         return this.removeAt(0);
     }
 
-    printList(){
-        let current = this.head;
-        let str = "head->";
-        while(current){
-            str += `${current.data}->`;
-            current = current.next;
-        }
-        str += "null";
-        console.log(str);
-    }
-
-    
     indexOf(data){
         let current = this.head;
         let index = 0;
