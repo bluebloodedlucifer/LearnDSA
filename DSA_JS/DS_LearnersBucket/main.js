@@ -8,14 +8,12 @@ import DoublyLinkedList from "./8_doubly_linked_list.js";
 
 let dll = new DoublyLinkedList()
 
-for(let i = 0; i<10; i++){
-    dll.insertAt(i, 9-i);
-    dll.printList();
-}
-for(let i = 0; i<10; i++){
-    dll.removeAt(0);
-    dll.printList()
-}
+dll.push(1)
+dll.push(2)
+dll.printList()
+console.log(dll.shift());
+console.log(dll.shift());
+
 
 
 
