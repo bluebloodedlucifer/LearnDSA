@@ -9,5 +9,19 @@ export default class Deque{
     unshift = (data) => this.deque.unshift(data);
     shift = () => this.deque.shift();
 
+    print = () => this.deque.print();
+
+    getFront = () => this.deque.getHead();
+    getBack = () => this.deque.getTail();
+    peekFront = () => this.deque.peekFront();
+    peekBack = () => this.deque.peekBack();
+
+
+    isEmpty = () => this.deque.isEmpty();
+    size = () => this.deque.size();
+    clear = () => this.deque.clear();
+
+    toString = () => this.deque.toString();
+    toArray = () => this.deque.toArray();
     
 }

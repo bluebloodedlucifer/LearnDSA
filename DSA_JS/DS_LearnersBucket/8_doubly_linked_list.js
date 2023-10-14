@@ -67,7 +67,7 @@ export default class DoublyLinkedList{
             return current.data;
         }else return null;
     }
-    printList(){
+    print(){
         let current = this.head;
         let str = "null<=>";
         while(current){
@@ -119,6 +119,9 @@ export default class DoublyLinkedList{
         }
         return arr;
     }
+    toString(){
+        return this.toArray().toString();
+    }
     at(pos){
         return this.getNodeAt(pos)?.data || null;
     }
@@ -142,5 +145,11 @@ export default class DoublyLinkedList{
     clear(){
         this.head = this.tail = null;
         this.length = 0;
+    }
+    peekFront(){
+        return this.head.data;
+    }
+    peekBack(){
+        return this.tail.data;
     }
 }
