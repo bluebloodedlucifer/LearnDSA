@@ -1,15 +1,15 @@
 import DoublyLinkedListNode from "./7_doubly_linked_list_node.js";
 
-export default class DoublyLinkedList {
-    constructor() {
+export default class CircularSinglyDoublyLinkedList{
+    constructor(){
         this.head = null;
         this.tail = null;
         this.length = 0;
     }
-
-    insertAt(pos, data){
+    
+    insertAt = (pos, data) => {
         if(data !== undefined && pos >= 0 && pos <= this.length){
-
+            
             let newNode = new DoublyLinkedListNode(data);
             let current = this.head, previous = this.head, index = 0;
 
@@ -24,7 +24,7 @@ export default class DoublyLinkedList {
                 }
             }else if(pos === this.length){
                 previous = this.tail;
-                
+
                 previous.next = newNode;
                 newNode.prev = previous;
                 this.tail = newNode;
@@ -39,57 +39,64 @@ export default class DoublyLinkedList {
                 previous.next = newNode;
                 current.prev = newNode;
             }
+
             this.length++;
+            this.tail.next = this.head;
+            this.head.prev = this.tail;
             return true;
         }else return false;
     }
 
-
-    removeAt(pos){
-        if (pos >= 0 && pos < this.length) {
+    removeAt = (pos) => {
+        if(pos >= 0 && pos < this.length){
             let current = this.head, previous = this.head, index = 0;
-            if (pos === 0) {
+            if(pos === 0){
                 this.head = current.next;
 
-                if (this.length === 1) this.tail = null;
+                if(this.length === 1) this.tail = null;
                 else this.head.prev = null;
 
-            }
-            else if (pos === this.length - 1) {
+            }else if(pos === this.length - 1){
                 current = this.tail;
-                this.tail = current.prev;
+                this.tail = current.prev
                 this.tail.next = null;
-            }
-            else {
-                while (index++ < pos) {
+            }else{
+                while(index++ < pos){
                     previous = current;
                     current = current.next;
                 }
                 previous.next = current.next;
                 current.next.prev = previous;
             }
+            if(this.head){
+                this.head.prev = this.tail;
+                this.tail.next = this.head;
+            }
             this.length--;
             return current.data;
-        } else return null;
+        }else return null;
+
     }
+
     print(){
         let current = this.head, index = 0;
-        let str = "head<=>";
-        while (index++ < this.length) {
+        let str = "tail-head<=>";
+        while(index++ < this.length){
             str += `${current.data}<=>`;
             current = current.next;
         }
-        str += "tail";
+        str += "tail-head";
         console.log(str);
     }
-    printReverese(){
+    
+    printReverse = () => {
         let current = this.tail, index = 0;
-        let str = "tail<=>";
+        let str = "head-tail<=>";
         while(index++ < this.length){
             str += `${current.data}<=>`;
             current = current.prev;
         }
-        str += "head";
+        str += "head-tail";
         console.log(str);
     }
 
@@ -138,7 +145,7 @@ export default class DoublyLinkedList {
         return this.toArray().toString();
     }
     at(pos){
-        return this.getNodeAt(pos)?.data || null;
+        return this.getNodeAt(pos)?.data;
     }
     getHead(){
         return this.head;
@@ -155,16 +162,11 @@ export default class DoublyLinkedList {
             }
             return current;
         }
-        return null;
+        return undefined;
     }
     clear(){
         this.head = this.tail = null;
         this.length = 0;
     }
-    peekFront(){
-        return this.head?.data;
-    }
-    peekBack(){
-        return this.tail?.data;
-    }
+
 }

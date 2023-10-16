@@ -4,6 +4,8 @@ export default class Deque{
     constructor(){
         this.deque = new DoublyLinkedList()
     }
+    
+
     push = (data) => this.deque.push(data);
     pop = () => this.deque.pop();
     unshift = (data) => this.deque.unshift(data);
@@ -18,8 +20,12 @@ export default class Deque{
 
 
     isEmpty = () => this.deque.isEmpty();
+    isPresent = (data) => this.deque.isPresent(data);
+    indexOf = (data) => this.deque.indexOf(data);
     size = () => this.deque.size();
     clear = () => this.deque.clear();
+    at = (index) => this.deque.at(index);
+    getNodeAt = (index) => this.deque.getNodeAt(index)
 
     toString = () => this.deque.toString();
     toArray = () => this.deque.toArray();

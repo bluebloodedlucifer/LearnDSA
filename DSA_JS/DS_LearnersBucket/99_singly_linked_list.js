@@ -110,7 +110,6 @@ export default class SinglyLinkedList{
         }
     }
 
-    inserAt()
 
     printList(){
         let curr = this.head;
