@@ -17,11 +17,28 @@ const input = query => new Promise(resolve => readline.question(query, resolve))
 
 const main = async () => {
     const n = parseInt(await input(`Please Enter Length of array n: `));
-    
 
+    const arr = new Array(n);
+    for(let i = 0; i<n; i++) arr[i] = parseInt(await input(``));
+
+    const x = parseInt(await input(`Please Enter the number to search: `));
+
+    console.log(allIndices(arr, x, 0, 0));
 
     readline.close();
 }
 
+const allIndices = (arr, x, index, foundSoFar) => {
+    if(index === arr.length) return new Array(foundSoFar);
+
+    if(arr[index] === x){
+        const ans = allIndices(arr, x, index + 1, foundSoFar + 1);
+        ans[foundSoFar--] = index;
+        return ans;
+    }else{
+        const ans = allIndices(arr, x, index + 1, foundSoFar);
+        return ans;
+    }
+}
 
 main();
