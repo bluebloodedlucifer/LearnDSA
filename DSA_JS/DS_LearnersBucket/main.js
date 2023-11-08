@@ -12,9 +12,7 @@ import CircularSinglyDoublyLinkedList from "./11_circular_doubly_linked_list.js"
 let cdll = new CircularSinglyDoublyLinkedList();
 
 for(let i = 0; i < 10; i++){
-    console.log(cdll.peekFront());
-    console.log(cdll.peekBack());
-    cdll.insertAt(0, i);
+    cdll.push(i)
 }
 
 cdll.print()

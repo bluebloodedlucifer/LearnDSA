@@ -30,31 +30,45 @@ const main = async () => {
     readline.close();
 }
 
+const getMazePath = (sr, sc, dr, dc) => {
+    if(sr == dr && sc == dc) return [""];
+
+    let partialPath1 = [];
+    let partialPath2 = [];
+    if(sr < dr){
+        partialPath2 = getMazePath(sr+1, sc, dr, dc);
+    }
+    if(sc < dc){
+        partialPath1 = getMazePath(sr, sc+1, dr, dc);
+    }
+
+    const ans = [];
+    partialPath1.forEach(e => ans.push("h" + e));
+    partialPath2.forEach(e => ans.push("v" + e));
+
+    return ans;
+}
+
 // const getMazePath = (sr, sc, dr, dc) => {
+
 //     if(sr == dr && sc == dc) return [""];
 
 //     let partialPath1 = [];
 //     let partialPath2 = [];
+
 //     if(sr < dr){
-//         partialPath2 = getMazePath(sr+1, sc, dr, dc);
+//         partialPath1 = getMazePath(sr, sc, dr - 1, dc);
 //     }
 //     if(sc < dc){
-//         partialPath1 = getMazePath(sr, sc+1, dr, dc);
+//         partialPath2 = getMazePath(sr, sc, dr, dc - 1);
 //     }
 
 //     const ans = [];
-//     partialPath1.forEach(e => ans.push("h" + e));
-//     partialPath2.forEach(e => ans.push("v" + e));
+//     partialPath1.forEach(e => ans.push(e + "h"));
+//     partialPath2.forEach(e => ans.push(e + "v"));
 
 //     return ans;
 // }
-
-const getMazePath = (sr, sc, dr, dc) => {
-
-
-    let
-
-}
 
 
 main();
