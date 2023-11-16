@@ -50,7 +50,7 @@ const getMazePathsWithJumps = (sr, sc, dr, dc) => {
     }
 
 
-    for(let i = 1; i<=dr-sc && i<=dc-sc <= dr; i++){
+    for(let i = 1; i<=dr-sc && i<=dc-sc; i++){
         const pd = getMazePathsWithJumps(sr+i, sc+i, dr, dc);
         for(const d of pd) finalAns.push("d" + i + d);
     }
