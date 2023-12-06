@@ -1,0 +1,49 @@
+1 Dynamic Programming | Introduction
+2 Types of knapsack
+3 01 Knapsack Recursive
+4 01Knapsack Memoization
+5 01 Knapsack Top Down DP
+6 Identification of Knapsack Problems and Introduction
+7 Subset Sum Problem
+8 Equal Sum Partition Problem
+9 Count of Subsets Sum with a Given Sum
+10 Minimum Subset Sum Difference
+11 Count the number of subset with a given difference
+12 Target sum
+13 Unbounded Knapsack
+14 Rod Cutting Problem
+15 Coin change problem: Maximum number of ways
+16 Coin change problem: Minimum number of coins
+17 Coin change problem Contd.
+18 Longest common subsequence Introduction
+19 Longest common subsequence Recursive
+20 Longest common subsequence Memoization
+21 Longest common subsequence Top down DP
+22 Longest Common Substring
+23 Printing Longest common subsequence
+24 Shortest Common SuperSequence
+25 Minimum Number of Insertion and Deletion to convert String a to String b
+26 Longest Palindromic Subsequence
+28 Minimum number of deletion in a string to make it a palindrome
+29 Print shortest common Supersequence
+30 Longest repeating subsequence
+31 Sequence Pattern Matching
+32 Minimum number of insertion in a string to make it a palindrome
+33 Matrix chain multiplication Introduction Identification and General Format
+34 Matrix Chain Multiplication Recursive
+35 Matrix chain multiplication Memoization
+36 Palindrome Partitioning Recursive
+37 Palindrome Partitioning Memoization
+38 Palindrome Partitioning Memoized Optimisation
+39 Evaluate Expression to True Boolean Parenthesization Recursive
+40 Evaluate Expression To True Boolean Parenthesization Memoized
+41 Scrambled String Recursive
+42 Scrambled String Memoized
+43 Egg Dropping Problem Recursive
+44 Egg Dropping Problem Memoization
+45 Egg Dropping Problem Memoization Optimization
+46 Dynamic programming on Trees Introduction and Identification
+47 Dynamic Programming on Tree General Syntax
+48 Diameter of a Binary Tree
+49 Maximum Path Sum | From any node to any node
+50 Maximum Path sum | From leaf node to leaf node
